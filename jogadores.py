@@ -14,6 +14,24 @@ class Jogadores:
             case self.jogador2:
                 self.jogador_atual = self.jogador1
 
-    def escolher_posicao(self, linha_coluna):
+    @staticmethod
+    def escolher_posicao():
+        def inner(n):
+            output = None
 
-        input_jogador = None
+            while output not in range(1, 4):
+                try:
+                    output = int(input(f"Informe um número para a {n} [ 1 / 2 / 3 ]: "))
+                    if output not in range(1, 4):
+                        print("Informe um número válido. [ 1 / 2 / 3]")
+                except ValueError:
+                    print("Informe um valor número de 1 a 3.")
+
+            return output
+
+        return [inner("linha") - 1, inner("coluna") - 1]
+
+
+if __name__ == "__main__":
+    jogadores = Jogadores()
+    print(jogadores.escolher_posicao())

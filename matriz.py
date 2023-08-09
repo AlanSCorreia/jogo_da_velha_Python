@@ -21,13 +21,11 @@ class Matriz:
         print('#' * 13)
 
     def atualizar(self, posicao: list[int], letra: str) -> bool:
-        if self.matriz[posicao[0]][posicao[1]] == ' ':
-
+        if self.matriz[posicao[0]][posicao[1]] == '-':
             self.matriz[posicao[0]][posicao[1]] = letra
             return True
 
         else:
-
             print("POSIÇÃO INVÁLIDA. Tente novamente.")
             return False
 
@@ -35,5 +33,5 @@ class Matriz:
 if __name__ == "__main__":
     matriz: Matriz = Matriz()
     matriz.desenhar()
-    matriz.matriz[0][0] = 'a'
+    matriz.atualizar([0, 0], 'X')
     matriz.desenhar()

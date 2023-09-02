@@ -14,7 +14,7 @@ class Players:
 
     @staticmethod
     def choose_position():
-        def inner(n):
+        def validate_input(n):
             output = None
 
             while output not in range(1, 4):
@@ -27,7 +27,7 @@ class Players:
 
             return output
 
-        return [inner("linhas") - 1, inner("colunas") - 1]
+        return [validate_input("linhas") - 1, validate_input("colunas") - 1]
 
 
 if __name__ == "__main__":

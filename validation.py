@@ -15,7 +15,7 @@ class MatrixValidation:
     def __column(matrix: list[list[str]], letter: str) -> bool:
         return any([matrix[0][n] == matrix[1][n] == matrix[2][n] == letter for n in range(3)])
 
-    def validate(self, matrix: list[list[str]], letter: str) -> bool:
+    def validate_win_condition(self, matrix: list[list[str]], letter: str) -> bool:
         return any([self.__left_diagonal(matrix, letter),
                    self.__right_diagonal(matrix, letter),
                    self.__line(matrix, letter),
